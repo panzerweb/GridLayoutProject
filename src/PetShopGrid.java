@@ -200,7 +200,8 @@ public class PetShopGrid extends javax.swing.JFrame {
         jPanel3.setLayout(new java.awt.GridLayout(1, 1, 5, 5));
 
         jButton8.setBackground(new java.awt.Color(153, 153, 255));
-        jButton8.setText("Info");
+        jButton8.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jButton8.setText("Manual | Policy & Terms");
         jButton8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

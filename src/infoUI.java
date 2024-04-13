@@ -34,6 +34,7 @@ public class infoUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -77,7 +78,7 @@ public class infoUI extends javax.swing.JFrame {
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 550, 60));
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 255));
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel1.setFont(new java.awt.Font("Kristen ITC", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 102));
@@ -98,9 +99,17 @@ public class infoUI extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("Hello! This is a simple Petshop \nPoint-Of-Sale System using \nJava Swing GUI at Netbeans GUI Builder.\n\n\nDesigner:\n-ROMEO SELWYN M. VILLAR (PanzerWeb)\n-KEAN KYLE ANILAO\n-AALIYAH ANGELICA MARIAL\n\nIn this system, it has all basic features \nof a POS System such as inputting details,\nand presenting to a table receipt format \nand showing total prices. A system such as \nthis is intended for Physical Stores that \nruns a petshop for a processing \ntransaction.\n===========================================\nGUIDE ON HOW TO USE THIS:\n\n1.) Home -> Login or Register\n(If Register, click Register)\n\n2.) Login your account\n\n3.) Show Main Interface\n\n4.) Select Animal Class or Type\n\n5.) Select Breed\n\n6.) Input Breed, Pet ID, gender, and Quantity\n\n7.) Click 'Add' button\n\n====BUYER INFORMATION====\n\n8.) Input following corresponding details\n\n9.) Click 'Save' to save to a receipt\n\n10.) Click 'Delete' to clear information\n\n(Note: Recheck information before saving)\n\n11.)Click Confirm to show another JFrame\n\n12.) Press \"Print Receipt\" to print receipt.\n\n13.) Your transaction is completed!\n\nThank you so much customer!\n\n\nThe system provides the following animal \ntypes:\n\nDogs\nCats\nBirds\nFish\nRabbits\nHamsters\n\nNote: The animal types are not fixed and \nare subjected to modification, feel free \nto add, remove or change the animal \nclassifications presented.");
+        jTextArea1.setText("THIS SECTION PRESENTS \nMANUAL GUIDE, POLICY & TERMS OF AGREEMENT\n\n==============================================\n\nREAD OUR POLICY AND TERMS OF AGREEMENT!!!\n\n==============================================\n\nMANUAL GUIDE\n\nHello! This is a simple Petshop \nPoint-Of-Sale System using \nJava Swing GUI at Netbeans GUI Builder.\n\n\nDesigner:\n-ROMEO SELWYN M. VILLAR (PanzerWeb)\n-KEAN KYLE ANILAO\n-AALIYAH ANGELICA MARIAL\n\nIn this system, it has all basic features \nof a POS System such as inputting details,\nand presenting to a table receipt format \nand showing total prices. A system such as \nthis is intended for Physical Stores that \nruns a petshop for a processing \ntransaction.\n===========================================\nGUIDE ON HOW TO USE THIS:\n\n1.) Home -> Login or Register\n(If Register, click Register)\n\n2.) Login your account\n\n3.) Show Main Interface\n\n4.) Select Animal Class or Type\n\n5.) Select Breed\n\n6.) Input Breed, Pet ID, gender, and Quantity\n\n7.) Click 'Add' button\n\n====BUYER INFORMATION====\n\n8.) Input following corresponding details\n\n9.) Click 'Save' to save to a receipt\n\n10.) Click 'Delete' to clear information\n\n(Note: Recheck information before saving)\n\n11.)Click Confirm to show another JFrame\n\n12.) Press \"Print Receipt\" to print receipt.\n\n13.) Your transaction is completed!\n\nThank you so much customer!\n\n\nThe system provides the following animal \ntypes:\n\nDogs\nCats\nBirds\nFish\nRabbits\nHamsters\n\nNote: The animal types are not fixed and \nare subjected to modification, feel free \nto add, remove or change the animal \nclassifications presented.\n\n===============================================\nPolicy and Terms of Agreement\n\n1. Introduction\n\nWelcome to our Petshop Point-Of-Sale System! \nThis document outlines the policies and terms of agreement \ngoverning the use of our system. By using our software, you \nagree to abide by these policies and terms.\n\n2. Usage\n\nOur Petshop Point-Of-Sale System is intended for educational \npurposes only. It is designed as a project for Computer \nProgramming 2 course for BSIT-1B students in their 1st Year \nCollege 2nd Semester.\nThe system is meant to simulate a basic point-of-sale system \nfor a pet shop environment.\n\n3. Data Privacy\n\nAll data entered into the system, including customer \ninformation and transaction details, should be treated with \nconfidentiality and respect for privacy.\nUsers are responsible for ensuring the security of their \nlogin credentials and should not share them with others.\n\n4. Intellectual Property\n\nThe software and all associated materials, including code, \ndesign elements, and documentation, are the intellectual \nproperty of the developers and are protected by copyright laws.\nUsers are not permitted to copy, distribute, or modify the \nsoftware without explicit permission from the developers.\n\n5. Usage Restrictions\n\nUsers are prohibited from using the system for any illegal or \nunethical activities.\nThe system should not be used for commercial purposes or \nfor profit generation outside of the educational context.\n\n6. Liability\n\nThe developers of the Petshop Point-Of-Sale System are not \nliable for any damages or losses incurred from the use of the \nsoftware.\nUsers assume full responsibility for their actions while \nusing the system.\n\n7. Support\n\nLimited technical support may be available for users \nexperiencing issues with the software. However, support is \nnot guaranteed and is provided at the discretion of the \ndevelopers.\n\n8. Agreement\n\nBy using the Petshop Point-Of-Sale System, you acknowledge \nthat you have read, understood, and agreed to the policies \nand terms outlined in this document.");
         jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setCaretPosition(0);
         jScrollPane1.setViewportView(jTextArea1);
+
+        jButton1.setText("Close");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -108,12 +117,19 @@ public class infoUI extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(112, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 100, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(100, 100, 100))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(231, 231, 231))))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,13 +138,19 @@ public class infoUI extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
-                .addGap(112, 112, 112))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(69, 69, 69))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,6 +188,7 @@ public class infoUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
