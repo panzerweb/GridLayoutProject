@@ -438,6 +438,7 @@ public class PetShopGrid extends javax.swing.JFrame {
 
     }//GEN-LAST:event_receiptInputMethodTextChanged
 
+    //This is the calculate total button
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         double total = 0; // Initialize the total price to 0
         for (int i = 0; i < receipt.getRowCount(); i++) { 
