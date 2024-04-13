@@ -1,0 +1,61 @@
+Petshop
+
+Variables:
+
+Petbreed
+PetID
+gender
+Quantity
+
+Price and ID for Dogs:
+
+Labrador - 55894 - 6000d pesos
+Bulldog - 78005 - 8000d pesos
+German Shepherd - 31548 - 15,000d pesos
+Husky - 86594 - 20,000d pesos
+Beagle - 45663 - 10,000d pesos
+Chihuahua - 79895 - 15,000d pesos
+
+Price and ID for Cats:
+Abyssinian - 78996 - 8000d pesos
+Birman - 44356 - 18000d pesos
+Devon Rex - 12569 - 15000d pesos
+Persian - 99482 - 20000d pesos
+Ragdoll - 36494 - 25000d pesos
+Burmilla - 68852 - 18000d pesos
+
+Price and ID for Birds:
+
+Lovebirds -13135 - 5500d pesos
+Finch - 99686 - 10000d pesos
+Parrot - 65887 - 6000d pesos
+Budgerigar - 77833 - 8000d pesos
+Dove - 15158 - 6000d pesos
+Macaw - 25635 - 8000d pesos
+
+Price and ID for Fish:
+
+Goldfish - 96968 - 4500d pesos
+Koi - 65875 - 5000d pesos
+Black Moor - 63589 - 4000d pesos
+Clown Fish - 23356 - 6000d pesos
+Tiger Barbs - 46485 - 8000d pesos
+Guppy - 79895 - 5000d pesos
+
+Price and ID for Rabbits:
+
+Angola Rabbit - 85465 - 10000d pesos
+Thrianta - 24586 - 15000d pesos
+Havana Rabbit - 32154 - 12000d pesos
+Golden Glavcot - 75896 - 18000d pesos
+Polish Rabbit - 96524 - 20000d pesos
+Perlfeh Rabbit - 72456 - 22000d pesos
+
+Price and ID for Hamsters:
+
+Golden Hamster - 74956 - 5600d pesos
+Chinese Hamster - 29864 - 5000d pesos
+Roborovski - 65321 - 6000d pesos
+Dwaf Campbell - 79864 - 7000d pesos
+Syrian Hamster - 15689 - 10000d pesos
+Cricetulus - 75691 - 8000d pesos
