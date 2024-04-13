@@ -11,6 +11,7 @@ public class PetShopGrid extends javax.swing.JFrame {
     
     public PetShopGrid() {
         initComponents();
+        
     }
 
     
@@ -53,7 +54,7 @@ public class PetShopGrid extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         totalPriceField = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
         background = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
@@ -151,7 +152,6 @@ public class PetShopGrid extends javax.swing.JFrame {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, 124));
 
         jPanel4.setBackground(new java.awt.Color(51, 255, 102));
-        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel4.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel2.setBackground(new java.awt.Color(51, 51, 51));
@@ -176,17 +176,32 @@ public class PetShopGrid extends javax.swing.JFrame {
                 "Pet Breed", "Pet ID", "Gender", "Quantity", "Price"
             }
         ));
+        receipt.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                receiptInputMethodTextChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(receipt);
+        if (receipt.getColumnModel().getColumnCount() > 0) {
+            receipt.getColumnModel().getColumn(0).setHeaderValue("Pet Breed");
+            receipt.getColumnModel().getColumn(1).setHeaderValue("Pet ID");
+            receipt.getColumnModel().getColumn(2).setHeaderValue("Gender");
+            receipt.getColumnModel().getColumn(3).setHeaderValue("Quantity");
+            receipt.getColumnModel().getColumn(4).setHeaderValue("Price");
+        }
 
         jPanel6.add(jScrollPane1);
 
         getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 104, 615, 312));
 
+        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3.setLayout(new java.awt.GridLayout(1, 1, 5, 5));
 
         jButton8.setBackground(new java.awt.Color(153, 153, 255));
         jButton8.setText("Info");
-        jButton8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -211,13 +226,13 @@ public class PetShopGrid extends javax.swing.JFrame {
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 408, -1, 76));
 
         jPanel7.setBackground(new java.awt.Color(102, 102, 255));
-        jPanel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel7.setLayout(new java.awt.GridLayout(0, 1));
 
         jLabel3.setBackground(new java.awt.Color(51, 51, 51));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Buyer Information");
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel7.add(jLabel3);
 
         getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 209, 40));
@@ -241,7 +256,7 @@ public class PetShopGrid extends javax.swing.JFrame {
 
         jToggleButton1.setBackground(new java.awt.Color(255, 255, 153));
         jToggleButton1.setText("Save");
-        jToggleButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jToggleButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
@@ -249,9 +264,8 @@ public class PetShopGrid extends javax.swing.JFrame {
         });
         jPanel9.add(jToggleButton1);
 
-        jToggleButton2.setBackground(new java.awt.Color(255, 51, 51));
         jToggleButton2.setText("Delete");
-        jToggleButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jToggleButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel9.add(jToggleButton2);
 
         getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 497, 209, 41));
@@ -282,14 +296,20 @@ public class PetShopGrid extends javax.swing.JFrame {
 
         getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(628, 426, 234, 31));
 
-        jPanel12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel12.setLayout(new java.awt.GridLayout(1, 0));
+        jPanel12.setLayout(new java.awt.GridLayout(1, 0, 20, 0));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel7.setText("Total :");
-        jPanel12.add(jLabel7);
+        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(51, 51, 51));
+        jButton7.setText("Calculate Total :");
+        jButton7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(jButton7);
 
-        getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(536, 426, 85, 31));
+        getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 426, 180, 31));
 
         background.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -399,18 +419,38 @@ public class PetShopGrid extends javax.swing.JFrame {
         model.addRow(dataRow);
       }
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-    Hamsters h = new Hamsters();
-            h.setVisible(true);
-            h.pack();
-            h.setLocationRelativeTo(null);
-            h.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            setVisible(true);
+        Hamsters h = new Hamsters();
+                h.setVisible(true);
+                h.pack();
+                h.setLocationRelativeTo(null);
+                h.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                setVisible(true);
             
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    
     private void totalPriceFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalPriceFieldActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_totalPriceFieldActionPerformed
+
+    private void receiptInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_receiptInputMethodTextChanged
+
+
+    }//GEN-LAST:event_receiptInputMethodTextChanged
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        double total = 0; // Initialize the total price to 0
+        for (int i = 0; i < receipt.getRowCount(); i++) { 
+            // Loop through each row of the receipt table
+            // Parse the value at column index 4 (presumably the "Price" column) as a Double
+            double amount = (double) receipt.getValueAt(i, 4);
+            // Add the parsed price to the total
+            total += amount;
+        }
+        // Set the total price in the totalPriceField JTextField
+        totalPriceField.setText(String.valueOf(total));
+
+    }//GEN-LAST:event_jButton7ActionPerformed
       public static void AddRowToHamsters(Object[] dataRow){
         DefaultTableModel model = (DefaultTableModel)receipt.getModel();
         model.addRow(dataRow);
@@ -435,6 +475,7 @@ public class PetShopGrid extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
@@ -443,7 +484,6 @@ public class PetShopGrid extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
