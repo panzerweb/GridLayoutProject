@@ -10,6 +10,13 @@ import javax.swing.table.DefaultTableModel;
 
 public class PetShopGrid extends javax.swing.JFrame {
     private final DefaultTableModel model;
+    
+    private Dogs dogsFrame;
+    private Cats catsFrame;
+    private Birds birdsFrame;
+    private Fish fishFrame;
+    private Rabbits rabbitsFrame;
+    private Hamsters hamstersFrame;
 
  
     
@@ -86,6 +93,11 @@ public class PetShopGrid extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 255));
@@ -363,11 +375,13 @@ public class PetShopGrid extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-   Birds b = new Birds();
-            b.setVisible(true);
-            b.pack();
-            b.setLocationRelativeTo(null);
-            b.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        closePetFrames();
+        
+        birdsFrame = new Birds();
+        birdsFrame.setVisible(true);
+        birdsFrame.pack();
+        birdsFrame.setLocationRelativeTo(null);
+        birdsFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             setVisible(true);
             
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -389,14 +403,16 @@ public class PetShopGrid extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     Dogs d = new Dogs();
-     d.setVisible(true);
-     d.pack();
-     d.setLocationRelativeTo(null);
-     d.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+     closePetFrames();
+        
+     dogsFrame = new Dogs();
+     dogsFrame.setVisible(true);
+     dogsFrame.pack();
+     dogsFrame.setLocationRelativeTo(null);
+     dogsFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
      setVisible(true);
      
-     //set Visible false to all animals
+ 
     }//GEN-LAST:event_jButton1ActionPerformed
    
     public static void AddRowToDogs(Object[] dataRow){
@@ -407,11 +423,13 @@ public class PetShopGrid extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         Cats c = new Cats();
-            c.setVisible(true);
-            c.pack();
-            c.setLocationRelativeTo(null);
-            c.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        closePetFrames();
+        
+         catsFrame = new Cats();
+            catsFrame.setVisible(true);
+            catsFrame.pack();
+            catsFrame.setLocationRelativeTo(null);
+            catsFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -420,11 +438,13 @@ public class PetShopGrid extends javax.swing.JFrame {
         model.addRow(dataRow);
     }
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-    Fish f = new Fish();
-            f.setVisible(true);
-            f.pack();
-            f.setLocationRelativeTo(null);
-            f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        closePetFrames();
+        
+        fishFrame= new Fish();
+        fishFrame.setVisible(true);
+        fishFrame.pack();
+        fishFrame.setLocationRelativeTo(null);
+        fishFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             setVisible(true);
             
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -433,11 +453,13 @@ public class PetShopGrid extends javax.swing.JFrame {
         model.addRow(dataRow);
       }
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        Rabbits r = new Rabbits();
-            r.setVisible(true);
-            r.pack();
-            r.setLocationRelativeTo(null);
-            r.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        closePetFrames();
+        
+        rabbitsFrame = new Rabbits();
+        rabbitsFrame.setVisible(true);
+        rabbitsFrame.pack();
+        rabbitsFrame.setLocationRelativeTo(null);
+        rabbitsFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             setVisible(true);
             
 
@@ -447,12 +469,14 @@ public class PetShopGrid extends javax.swing.JFrame {
         model.addRow(dataRow);
       }
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        Hamsters h = new Hamsters();
-                h.setVisible(true);
-                h.pack();
-                h.setLocationRelativeTo(null);
-                h.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                setVisible(true);
+        closePetFrames();
+        
+        hamstersFrame = new Hamsters();
+        hamstersFrame.setVisible(true);
+        hamstersFrame.pack();
+        hamstersFrame.setLocationRelativeTo(null);
+        hamstersFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            setVisible(true);
             
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -494,6 +518,10 @@ public class PetShopGrid extends javax.swing.JFrame {
                 }
             }
     }//GEN-LAST:event_deleteRowActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        setLocation(1000, 250);
+    }//GEN-LAST:event_formWindowOpened
       public static void AddRowToHamsters(Object[] dataRow){
         DefaultTableModel model = (DefaultTableModel)receipt.getModel();
         model.addRow(dataRow);
@@ -508,6 +536,38 @@ public class PetShopGrid extends javax.swing.JFrame {
                 new PetShopGrid().setVisible(true);
             }
         });
+    }
+    
+    private void closePetFrames(){
+        // Close Dogs frame if it exists
+    if (dogsFrame != null) {
+        dogsFrame.dispose();
+        dogsFrame = null;
+    }
+
+    // Close Cats frame if it exists
+    if (catsFrame != null) {
+        catsFrame.dispose();
+        catsFrame = null;
+    }
+    
+    //And so on and so forth
+    if (birdsFrame != null) {
+        birdsFrame.dispose();
+        birdsFrame = null;
+    }
+    if (fishFrame != null) {
+        fishFrame.dispose();
+        fishFrame = null;
+    }
+    if (rabbitsFrame != null) {
+        rabbitsFrame.dispose();
+        rabbitsFrame = null;
+    }
+    if (hamstersFrame != null) {
+        hamstersFrame.dispose();
+        hamstersFrame = null;
+    }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

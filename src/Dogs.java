@@ -65,6 +65,11 @@ public class Dogs extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel7.setBackground(new java.awt.Color(102, 102, 255));
         jPanel7.setPreferredSize(new java.awt.Dimension(800, 700));
@@ -540,6 +545,10 @@ public class Dogs extends javax.swing.JFrame {
             
         
     }//GEN-LAST:event_clearFieldActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        setLocation(50, 200);
+    }//GEN-LAST:event_formWindowOpened
 
     
     public static void   main(String args[]) {
