@@ -91,6 +91,12 @@ public class Dogs extends javax.swing.JFrame {
         });
         jPanel1.add(PetID);
         jPanel1.add(gender);
+
+        Quantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuantityActionPerformed(evt);
+            }
+        });
         jPanel1.add(Quantity);
 
         addButton.setBackground(new java.awt.Color(153, 255, 153));
@@ -549,6 +555,10 @@ public class Dogs extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         setLocation(50, 200);
     }//GEN-LAST:event_formWindowOpened
+
+    private void QuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_QuantityActionPerformed
 
     
     public static void   main(String args[]) {

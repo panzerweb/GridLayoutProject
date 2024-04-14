@@ -164,6 +164,9 @@
             <Component class="javax.swing.JTextField" name="gender">
             </Component>
             <Component class="javax.swing.JTextField" name="Quantity">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="QuantityActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
