@@ -1,17 +1,32 @@
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.WindowConstants;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 
 
 public class PetShopGrid extends javax.swing.JFrame {
+    private final DefaultTableModel model;
 
  
     
     public PetShopGrid() {
         initComponents();
         
+        model = (DefaultTableModel) receipt.getModel();
+        receipt.setModel(model);
+        model.addTableModelListener(new TableModelListener() {
+
+            @Override
+            public void tableChanged(TableModelEvent e) {
+                if (e.getType() == TableModelEvent.DELETE) {
+                    
+                }
+            }
+        });
     }
 
     
@@ -54,6 +69,7 @@ public class PetShopGrid extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         totalPriceField = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
+        deleteRow = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         background = new javax.swing.JPanel();
 
@@ -297,7 +313,18 @@ public class PetShopGrid extends javax.swing.JFrame {
 
         getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(628, 426, 234, 31));
 
+        jPanel12.setBackground(new java.awt.Color(204, 204, 255));
         jPanel12.setLayout(new java.awt.GridLayout(1, 0, 20, 0));
+
+        deleteRow.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        deleteRow.setText("Delete Row");
+        deleteRow.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        deleteRow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteRowActionPerformed(evt);
+            }
+        });
+        jPanel12.add(deleteRow);
 
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton7.setForeground(new java.awt.Color(51, 51, 51));
@@ -310,7 +337,7 @@ public class PetShopGrid extends javax.swing.JFrame {
         });
         jPanel12.add(jButton7);
 
-        getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 426, 180, 31));
+        getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 426, 330, 31));
 
         background.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -453,6 +480,20 @@ public class PetShopGrid extends javax.swing.JFrame {
         totalPriceField.setText(String.valueOf(total));
 
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void deleteRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteRowActionPerformed
+           DefaultTableModel model = (DefaultTableModel)receipt.getModel();
+            if (receipt.getSelectedRowCount()== 1) {
+                model.removeRow(receipt.getSelectedRow());
+            
+        }else{
+                if (receipt.getRowCount() == 0) {
+                    JOptionPane.showMessageDialog(this, "Table is Empty");
+                } else {
+                    JOptionPane.showMessageDialog(this, "Select Only One Row");
+                }
+            }
+    }//GEN-LAST:event_deleteRowActionPerformed
       public static void AddRowToHamsters(Object[] dataRow){
         DefaultTableModel model = (DefaultTableModel)receipt.getModel();
         model.addRow(dataRow);
@@ -471,6 +512,7 @@ public class PetShopGrid extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
+    private javax.swing.JButton deleteRow;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
