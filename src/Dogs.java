@@ -82,6 +82,11 @@ public class Dogs extends javax.swing.JFrame {
                 BreedActionPerformed(evt);
             }
         });
+        Breed.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BreedKeyTyped(evt);
+            }
+        });
         jPanel1.add(Breed);
 
         PetID.addActionListener(new java.awt.event.ActionListener() {
@@ -89,12 +94,28 @@ public class Dogs extends javax.swing.JFrame {
                 PetIDActionPerformed(evt);
             }
         });
+        PetID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                PetIDKeyTyped(evt);
+            }
+        });
         jPanel1.add(PetID);
+
+        gender.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                genderKeyTyped(evt);
+            }
+        });
         jPanel1.add(gender);
 
         Quantity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QuantityActionPerformed(evt);
+            }
+        });
+        Quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                QuantityKeyTyped(evt);
             }
         });
         jPanel1.add(Quantity);
@@ -559,6 +580,34 @@ public class Dogs extends javax.swing.JFrame {
     private void QuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuantityActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_QuantityActionPerformed
+
+    private void PetIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PetIDKeyTyped
+       char key = evt.getKeyChar();
+       if(key < '0' || key > '9'){
+            evt.consume();
+       }
+    }//GEN-LAST:event_PetIDKeyTyped
+
+    private void QuantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_QuantityKeyTyped
+        char key = evt.getKeyChar();
+       if(key < '0' || key > '9'){
+            evt.consume();
+       }
+    }//GEN-LAST:event_QuantityKeyTyped
+
+    private void BreedKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BreedKeyTyped
+       char key = evt.getKeyChar();
+       if(!(key < '0' || key > '9')){
+            evt.consume();
+       }
+    }//GEN-LAST:event_BreedKeyTyped
+
+    private void genderKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_genderKeyTyped
+        char key = evt.getKeyChar();
+       if(!(key < '0' || key > '9')){
+            evt.consume();
+       }
+    }//GEN-LAST:event_genderKeyTyped
 
     
     public static void   main(String args[]) {

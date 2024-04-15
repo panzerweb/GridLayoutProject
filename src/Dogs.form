@@ -154,18 +154,24 @@
             <Component class="javax.swing.JTextField" name="Breed">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BreedActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="BreedKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="PetID">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PetIDActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="PetIDKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="gender">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="genderKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="Quantity">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="QuantityActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="QuantityKeyTyped"/>
               </Events>
             </Component>
           </SubComponents>

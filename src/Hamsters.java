@@ -89,9 +89,32 @@ public class Hamsters extends javax.swing.JFrame {
                 PetbreedActionPerformed(evt);
             }
         });
+        Petbreed.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                PetbreedKeyTyped(evt);
+            }
+        });
         jPanel1.add(Petbreed);
+
+        PetID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                PetIDKeyTyped(evt);
+            }
+        });
         jPanel1.add(PetID);
+
+        gender.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                genderKeyTyped(evt);
+            }
+        });
         jPanel1.add(gender);
+
+        Quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                QuantityKeyTyped(evt);
+            }
+        });
         jPanel1.add(Quantity);
 
         addButton.setBackground(new java.awt.Color(153, 255, 153));
@@ -520,6 +543,34 @@ public class Hamsters extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         setLocation(50, 200);
     }//GEN-LAST:event_formWindowOpened
+
+    private void PetIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PetIDKeyTyped
+       char key = evt.getKeyChar();
+       if(key < '0' || key > '9'){
+            evt.consume();
+       }
+    }//GEN-LAST:event_PetIDKeyTyped
+
+    private void QuantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_QuantityKeyTyped
+        char key = evt.getKeyChar();
+       if(key < '0' || key > '9'){
+            evt.consume();
+       }
+    }//GEN-LAST:event_QuantityKeyTyped
+
+    private void genderKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_genderKeyTyped
+      char key = evt.getKeyChar();
+       if(!(key < '0' || key > '9')){
+            evt.consume();
+       }
+    }//GEN-LAST:event_genderKeyTyped
+
+    private void PetbreedKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PetbreedKeyTyped
+        char key = evt.getKeyChar();
+       if(!(key < '0' || key > '9')){
+            evt.consume();
+       }
+    }//GEN-LAST:event_PetbreedKeyTyped
 
     /**
      * @param args the command line arguments

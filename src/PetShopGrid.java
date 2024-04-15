@@ -2,7 +2,6 @@
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.WindowConstants;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
@@ -42,6 +41,8 @@ public class PetShopGrid extends javax.swing.JFrame {
     private void initComponents() {
 
         jDialog1 = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -75,10 +76,13 @@ public class PetShopGrid extends javax.swing.JFrame {
         jToggleButton4 = new javax.swing.JToggleButton();
         jPanel11 = new javax.swing.JPanel();
         totalPriceField = new javax.swing.JTextField();
+        background = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         deleteRow = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        background = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -90,6 +94,19 @@ public class PetShopGrid extends javax.swing.JFrame {
             jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -212,13 +229,6 @@ public class PetShopGrid extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(receipt);
-        if (receipt.getColumnModel().getColumnCount() > 0) {
-            receipt.getColumnModel().getColumn(0).setHeaderValue("Pet Breed");
-            receipt.getColumnModel().getColumn(1).setHeaderValue("Pet ID");
-            receipt.getColumnModel().getColumn(2).setHeaderValue("Gender");
-            receipt.getColumnModel().getColumn(3).setHeaderValue("Quantity");
-            receipt.getColumnModel().getColumn(4).setHeaderValue("Price");
-        }
 
         jPanel6.add(jScrollPane1);
 
@@ -323,7 +333,22 @@ public class PetShopGrid extends javax.swing.JFrame {
         });
         jPanel11.add(totalPriceField);
 
-        getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(628, 426, 234, 31));
+        getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 426, 210, 31));
+
+        background.setBackground(new java.awt.Color(204, 204, 255));
+
+        jPanel13.setBackground(new java.awt.Color(204, 204, 255));
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 41, Short.MAX_VALUE)
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 73, Short.MAX_VALUE)
+        );
 
         jPanel12.setBackground(new java.awt.Color(204, 204, 255));
         jPanel12.setLayout(new java.awt.GridLayout(1, 0, 20, 0));
@@ -349,19 +374,56 @@ public class PetShopGrid extends javax.swing.JFrame {
         });
         jPanel12.add(jButton7);
 
-        getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 426, 330, 31));
+        jPanel14.setBackground(new java.awt.Color(204, 204, 255));
 
-        background.setBackground(new java.awt.Color(204, 204, 255));
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 26, Short.MAX_VALUE)
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("  ₱");
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 890, Short.MAX_VALUE)
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addGap(272, 272, 272)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(239, 239, 239))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                .addContainerGap(350, Short.MAX_VALUE)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(110, 110, 110))
         );
 
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 590));
@@ -490,10 +552,14 @@ public class PetShopGrid extends javax.swing.JFrame {
 
     }//GEN-LAST:event_receiptInputMethodTextChanged
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        setLocation(1000, 250);
+    }//GEN-LAST:event_formWindowOpened
+
     //This is the calculate total button
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         double total = 0; // Initialize the total price to 0
-        for (int i = 0; i < receipt.getRowCount(); i++) { 
+        for (int i = 0; i < receipt.getRowCount(); i++) {
             // Loop through each row of the receipt table
             // Parse the value at column index 4 (presumably the "Price" column) as a Double
             double amount = (double) receipt.getValueAt(i, 4);
@@ -502,26 +568,21 @@ public class PetShopGrid extends javax.swing.JFrame {
         }
         // Set the total price in the totalPriceField JTextField
         totalPriceField.setText(String.valueOf(total));
-
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void deleteRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteRowActionPerformed
-           DefaultTableModel model = (DefaultTableModel)receipt.getModel();
-            if (receipt.getSelectedRowCount()== 1) {
-                model.removeRow(receipt.getSelectedRow());
-            
-        }else{
-                if (receipt.getRowCount() == 0) {
-                    JOptionPane.showMessageDialog(this, "Table is Empty");
-                } else {
-                    JOptionPane.showMessageDialog(this, "Select Only One Row");
-                }
-            }
-    }//GEN-LAST:event_deleteRowActionPerformed
+        DefaultTableModel model = (DefaultTableModel)receipt.getModel();
+        if (receipt.getSelectedRowCount()== 1) {
+            model.removeRow(receipt.getSelectedRow());
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        setLocation(1000, 250);
-    }//GEN-LAST:event_formWindowOpened
+        }else{
+            if (receipt.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(this, "Table is Empty");
+            } else {
+                JOptionPane.showMessageDialog(this, "Select Only One Row");
+            }
+        }
+    }//GEN-LAST:event_deleteRowActionPerformed
       public static void AddRowToHamsters(Object[] dataRow){
         DefaultTableModel model = (DefaultTableModel)receipt.getModel();
         model.addRow(dataRow);
@@ -588,10 +649,13 @@ public class PetShopGrid extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -601,6 +665,8 @@ public class PetShopGrid extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

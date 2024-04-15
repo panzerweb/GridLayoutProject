@@ -1,5 +1,8 @@
 
+import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 
 public final class Signup extends javax.swing.JFrame {
@@ -10,12 +13,35 @@ public final class Signup extends javax.swing.JFrame {
         initComponents();
         L.setVisible(false);
         
+          //add placeholder style
+        addPlaceholderStyle(Fullname);
+        addPlaceholderStyle(Username);
+        addPlaceholderStyle(Password);
+        
         
         //Default Visibility of icons is false
         icon3.setVisible(false);
         icon4.setVisible(false);
+        
+          //add placeholder style
+        addPlaceholderStyle(Fullname);
+        addPlaceholderStyle(Username);
+        addPlaceholderStyle(Password);
+        
     }
-  
+     public void addPlaceholderStyle(JTextField textField){
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.ITALIC);
+        textField.setFont(font);
+        textField.setForeground(Color.gray);//font color
+    
+    }
+    public void removePlaceholderStyle(JTextField textField){
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.BOLD);
+        textField.setFont(font);
+        textField.setForeground(Color.black);//font color
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -34,9 +60,9 @@ public final class Signup extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Fullname = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        Username2 = new javax.swing.JTextField();
+        Username = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        Password2 = new javax.swing.JPasswordField();
+        Password = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -126,6 +152,7 @@ public final class Signup extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel2.setText("Full Name");
 
+        Fullname.setText("Fullname");
         Fullname.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 FullnameFocusGained(evt);
@@ -143,39 +170,41 @@ public final class Signup extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel3.setText("Username");
 
-        Username2.addFocusListener(new java.awt.event.FocusAdapter() {
+        Username.setText("Username");
+        Username.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                Username2FocusGained(evt);
+                UsernameFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                Username2FocusLost(evt);
+                UsernameFocusLost(evt);
             }
         });
-        Username2.addActionListener(new java.awt.event.ActionListener() {
+        Username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Username2ActionPerformed(evt);
+                UsernameActionPerformed(evt);
             }
         });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel4.setText("Password");
 
-        Password2.addFocusListener(new java.awt.event.FocusAdapter() {
+        Password.setText("Password");
+        Password.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                Password2FocusGained(evt);
+                PasswordFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                Password2FocusLost(evt);
+                PasswordFocusLost(evt);
             }
         });
-        Password2.addActionListener(new java.awt.event.ActionListener() {
+        Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Password2ActionPerformed(evt);
+                PasswordActionPerformed(evt);
             }
         });
-        Password2.addKeyListener(new java.awt.event.KeyAdapter() {
+        Password.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                Password2KeyTyped(evt);
+                PasswordKeyTyped(evt);
             }
         });
 
@@ -238,8 +267,8 @@ public final class Signup extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Username2, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
-                            .addComponent(Password2)
+                            .addComponent(Username, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                            .addComponent(Password)
                             .addComponent(Fullname))))
                 .addContainerGap(60, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,11 +288,11 @@ public final class Signup extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Username2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Password2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
@@ -303,11 +332,11 @@ public final class Signup extends javax.swing.JFrame {
     private boolean iconVisible = false;
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(Fullname.getText().isEmpty() || Username2.getText().isEmpty() || Password2.getText().isEmpty()){
+        if(Fullname.getText().isEmpty() || Username.getText().isEmpty() || Password.getText().isEmpty()){
          JOptionPane.showMessageDialog(this,"Please input the required fields");
         }
         else{
-            L.setAccounts(Username2.getText(), Password2.getText());
+            L.setAccounts(Username.getText(), Password.getText());
             JOptionPane.showMessageDialog(this,"Successfully Registered");
             Loginn login = new Loginn();
             login.setVisible(true);
@@ -328,58 +357,82 @@ public final class Signup extends javax.swing.JFrame {
        
     }//GEN-LAST:event_FullnameActionPerformed
 
-    private void Username2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Username2ActionPerformed
+    private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
       
-    }//GEN-LAST:event_Username2ActionPerformed
+    }//GEN-LAST:event_UsernameActionPerformed
 
     private void FullnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FullnameFocusGained
-         
+        if(Fullname.getText().equals("Fullname")){
+          Fullname.setText(null);
+          Fullname.requestFocus();
+          removePlaceholderStyle(Fullname);
+      }         
     }//GEN-LAST:event_FullnameFocusGained
 
-    private void Username2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Username2FocusGained
-       
-    }//GEN-LAST:event_Username2FocusGained
+    private void UsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFocusGained
+       if(Username.getText().equals("Username")){
+          Username.setText(null);
+          Username.requestFocus();
+          removePlaceholderStyle(Username);
+      }
+    }//GEN-LAST:event_UsernameFocusGained
 
-    private void Password2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Password2FocusGained
-
-    }//GEN-LAST:event_Password2FocusGained
+    private void PasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusGained
+        if(Password.getText().equals("Password")){
+          Password.setText(null);
+          Password.requestFocus();
+          //set password character
+          Password.setEchoChar('*');
+          removePlaceholderStyle(Password);
+        }
+    }//GEN-LAST:event_PasswordFocusGained
 
     private void FullnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FullnameFocusLost
-    
+          if(Fullname.getText().length() ==0){
+          addPlaceholderStyle(Fullname);
+          Fullname.setText("Fullname");
+             }
     }//GEN-LAST:event_FullnameFocusLost
 
-    private void Username2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Username2FocusLost
-       
-    }//GEN-LAST:event_Username2FocusLost
+    private void UsernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFocusLost
+          if(Username.getText().length() ==0){
+          addPlaceholderStyle(Username);
+          Username.setText("Username");
+          }
+    }//GEN-LAST:event_UsernameFocusLost
 
-    private void Password2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Password2FocusLost
- 
-    }//GEN-LAST:event_Password2FocusLost
+    private void PasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusLost
+          if(Password.getText().length() ==0){
+          addPlaceholderStyle(Password);
+          Password.setText("Password");
+          Password.setEchoChar('\u0000');
+         }
+    }//GEN-LAST:event_PasswordFocusLost
 
-    private void Password2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Password2ActionPerformed
+    private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Password2ActionPerformed
+    }//GEN-LAST:event_PasswordActionPerformed
 
-    private void Password2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Password2KeyTyped
-        if (!iconVisible && Password2.getPassword().length > 0) {
+    private void PasswordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordKeyTyped
+        if (!iconVisible && Password.getPassword().length > 0) {
             icon3.setVisible(true);
             icon4.setVisible(true);
             iconVisible = true;
-        } else if (iconVisible && Password2.getPassword().length == 0) {
+        } else if (iconVisible && Password.getPassword().length == 0) {
             icon3.setVisible(false);
             icon4.setVisible(false);
             iconVisible = false;
         }        // TODO add your handling code here:        // TODO add your handling code here:
-    }//GEN-LAST:event_Password2KeyTyped
+    }//GEN-LAST:event_PasswordKeyTyped
 
     private void icon3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icon3MousePressed
         icon4.setVisible(passwordVisible);
         icon3.setVisible(!passwordVisible);
 
         if (passwordVisible) {
-            Password2.setEchoChar('*'); 
+            Password.setEchoChar('*'); 
         } else {
-            Password2.setEchoChar((char)0); 
+            Password.setEchoChar((char)0); 
         }
 
         passwordVisible = !passwordVisible;
@@ -390,9 +443,9 @@ public final class Signup extends javax.swing.JFrame {
         icon4.setVisible(!passwordVisible);
 
         if (passwordVisible) {
-            Password2.setEchoChar('*'); 
+            Password.setEchoChar('*'); 
         } else {
-            Password2.setEchoChar((char)0); 
+            Password.setEchoChar((char)0); 
         }
 
         passwordVisible = !passwordVisible;       // TODO add your handling code here:
@@ -431,8 +484,8 @@ public final class Signup extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Fullname;
-    private javax.swing.JPasswordField Password2;
-    private javax.swing.JTextField Username2;
+    private javax.swing.JPasswordField Password;
+    private javax.swing.JTextField Username;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel icon3;
     private javax.swing.JLabel icon4;
