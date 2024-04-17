@@ -82,7 +82,7 @@ public final class Loginn extends javax.swing.JFrame {
         jLabel2.setText("Username");
 
         Username.setText("Username");
-        Username.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        Username.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Username.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 UsernameFocusGained(evt);
@@ -101,7 +101,7 @@ public final class Loginn extends javax.swing.JFrame {
         jLabel4.setText("Password");
 
         Password.setText("Password");
-        Password.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        Password.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Password.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 PasswordFocusGained(evt);
