@@ -1,4 +1,5 @@
 
+import java.util.Date;
 import java.util.HashMap;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -478,11 +479,43 @@ public class PetShopGrid extends javax.swing.JFrame {
         model.addRow(dataRow);
     }     
     private void confirmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmBtnActionPerformed
-        receiptArea.setText("**************************");
+        String personName = pName.getText();
+        long contactNumber = Long.parseLong(pContact.getText());
+        String pin = pPin.getText();
+        
+        Date currentDate = new Date();
+
+        //receiptPrint for the String Builder
+        //receipt for Table
+        //receiptArea for the textArea
+        StringBuilder receiptPrint = new StringBuilder("***********************************************************************************\n" +
+                "********************             PetShop System Receipt             ******************** \n" +
+                "***********************************************************************************\n" +
+                "\t                  Contact: 09090774336\n" +
+                "\t              Davao del Norte State College\n" +               
+                "\t              " + currentDate + "\n\n" +
+
+                
+                "Pet Name: " + personName + "\n" +
+                "Contact Number: " + contactNumber + "\n" +
+                "PIN: " + pin + "\n" +
+
+                "***********************************************************************************\n"+
+                 "Breed\tPetID\tGender\tQty\tPrice\n");
+
+        
+        for (int row = 0; row < receipt.getRowCount(); row++) {
+            for (int col = 0; col < receipt.getColumnCount(); col++) {
+                receiptPrint.append(receipt.getValueAt(row, col)).append("\t");
+  
+            }
+            receiptPrint.append("\n");
+        }
+        receiptArea.setText(receiptPrint.toString());
     }//GEN-LAST:event_confirmBtnActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
-        int contacts = Integer.parseInt(pContact.getText());
+        Long contacts = Long.parseLong(pContact.getText());
         int pin = Integer.parseInt(pPin.getText());
         
             hashStore.put("Buyer Name :", pName.getText());
@@ -490,7 +523,7 @@ public class PetShopGrid extends javax.swing.JFrame {
             hashStore.put("Pin :", pin);
             
             String name = (String)hashStore.get("Buyer Name :");
-            int contact = (Integer)hashStore.get("Contact No :");
+            long contact = (Long)hashStore.get("Contact No :");
             int pinned = (Integer)hashStore.get("Pin :");
             
             System.out.println(name);
@@ -593,7 +626,7 @@ public class PetShopGrid extends javax.swing.JFrame {
     }//GEN-LAST:event_receiptInputMethodTextChanged
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        setLocation(700, 250);
+        setLocation(740, 250);
     }//GEN-LAST:event_formWindowOpened
 
     //This is the calculate total button
