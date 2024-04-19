@@ -1,4 +1,5 @@
 
+import java.util.HashMap;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -8,6 +9,7 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class PetShopGrid extends javax.swing.JFrame {
+    static HashMap<String, Object> hashStore = new HashMap<>();
     private final DefaultTableModel model;
     
     private Dogs dogsFrame;
@@ -66,21 +68,25 @@ public class PetShopGrid extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        pName = new javax.swing.JTextField();
+        pContact = new javax.swing.JTextField();
+        pPin = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        saveBtn = new javax.swing.JToggleButton();
+        delBtn = new javax.swing.JToggleButton();
         jPanel10 = new javax.swing.JPanel();
-        jToggleButton4 = new javax.swing.JToggleButton();
         jPanel11 = new javax.swing.JPanel();
         totalPriceField = new javax.swing.JTextField();
+        jPanel15 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        receiptArea = new javax.swing.JTextArea();
+        jButton9 = new javax.swing.JButton();
         background = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         deleteRow = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        confirmBtn = new javax.swing.JToggleButton();
         jPanel14 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
 
@@ -129,7 +135,7 @@ public class PetShopGrid extends javax.swing.JFrame {
         jLabel1.setText("Petshop");
         jPanel1.add(jLabel1);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 47));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 47));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setLayout(new java.awt.GridLayout(0, 3, 5, 5));
@@ -279,48 +285,43 @@ public class PetShopGrid extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(204, 204, 255));
         jPanel8.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        pName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                pNameActionPerformed(evt);
             }
         });
-        jPanel8.add(jTextField1);
-        jPanel8.add(jTextField2);
-        jPanel8.add(jTextField3);
+        jPanel8.add(pName);
+        jPanel8.add(pContact);
+        jPanel8.add(pPin);
 
         getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 408, 108, -1));
 
         jPanel9.setBackground(new java.awt.Color(204, 204, 255));
         jPanel9.setLayout(new java.awt.GridLayout(1, 0, 5, 0));
 
-        jToggleButton1.setBackground(new java.awt.Color(255, 255, 153));
-        jToggleButton1.setText("Save");
-        jToggleButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        saveBtn.setBackground(new java.awt.Color(255, 255, 153));
+        saveBtn.setText("Save");
+        saveBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                saveBtnActionPerformed(evt);
             }
         });
-        jPanel9.add(jToggleButton1);
+        jPanel9.add(saveBtn);
 
-        jToggleButton2.setText("Delete");
-        jToggleButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel9.add(jToggleButton2);
+        delBtn.setText("Delete");
+        delBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        delBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delBtnActionPerformed(evt);
+            }
+        });
+        jPanel9.add(delBtn);
 
         getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 497, 209, 41));
 
         jPanel10.setLayout(new java.awt.GridLayout(1, 0));
         getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 526, -1, -1));
-
-        jToggleButton4.setBackground(new java.awt.Color(255, 255, 153));
-        jToggleButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jToggleButton4.setText("Confirm");
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(628, 505, 234, -1));
 
         jPanel11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel11.setLayout(new java.awt.GridLayout(1, 1));
@@ -334,6 +335,21 @@ public class PetShopGrid extends javax.swing.JFrame {
         jPanel11.add(totalPriceField);
 
         getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 426, 210, 31));
+
+        jPanel15.setLayout(null);
+
+        receiptArea.setEditable(false);
+        receiptArea.setColumns(20);
+        receiptArea.setRows(5);
+        jScrollPane4.setViewportView(receiptArea);
+
+        jPanel15.add(jScrollPane4);
+        jScrollPane4.setBounds(0, 0, 260, 320);
+
+        getContentPane().add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 100, 260, 320));
+
+        jButton9.setText("Print Receipt");
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 430, 260, 30));
 
         background.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -353,7 +369,7 @@ public class PetShopGrid extends javax.swing.JFrame {
         jPanel12.setBackground(new java.awt.Color(204, 204, 255));
         jPanel12.setLayout(new java.awt.GridLayout(1, 0, 20, 0));
 
-        deleteRow.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        deleteRow.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         deleteRow.setText("Delete Row");
         deleteRow.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         deleteRow.addActionListener(new java.awt.event.ActionListener() {
@@ -363,7 +379,7 @@ public class PetShopGrid extends javax.swing.JFrame {
         });
         jPanel12.add(deleteRow);
 
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton7.setForeground(new java.awt.Color(51, 51, 51));
         jButton7.setText("Calculate Total :");
         jButton7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -373,6 +389,16 @@ public class PetShopGrid extends javax.swing.JFrame {
             }
         });
         jPanel12.add(jButton7);
+
+        confirmBtn.setBackground(new java.awt.Color(255, 255, 153));
+        confirmBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        confirmBtn.setText("Confirm");
+        confirmBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmBtnActionPerformed(evt);
+            }
+        });
+        jPanel12.add(confirmBtn);
 
         jPanel14.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -384,7 +410,7 @@ public class PetShopGrid extends javax.swing.JFrame {
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -398,7 +424,7 @@ public class PetShopGrid extends javax.swing.JFrame {
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(880, Short.MAX_VALUE)
                         .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(backgroundLayout.createSequentialGroup()
                         .addGap(272, 272, 272)
@@ -411,30 +437,30 @@ public class PetShopGrid extends javax.swing.JFrame {
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+            .addGroup(backgroundLayout.createSequentialGroup()
                 .addContainerGap(350, Short.MAX_VALUE)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(134, 134, 134))
                     .addGroup(backgroundLayout.createSequentialGroup()
                         .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(110, 110, 110))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(111, 111, 111))))
         );
 
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 590));
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 590));
 
-        setSize(new java.awt.Dimension(892, 598));
+        setSize(new java.awt.Dimension(1175, 598));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void pNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pNameActionPerformed
         
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_pNameActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         closePetFrames();
@@ -451,13 +477,27 @@ public class PetShopGrid extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel)receipt.getModel();
         model.addRow(dataRow);
     }     
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-        
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
+    private void confirmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmBtnActionPerformed
+        receiptArea.setText("**************************");
+    }//GEN-LAST:event_confirmBtnActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-      
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
+        int contacts = Integer.parseInt(pContact.getText());
+        int pin = Integer.parseInt(pPin.getText());
+        
+            hashStore.put("Buyer Name :", pName.getText());
+            hashStore.put("Contact No :", contacts);
+            hashStore.put("Pin :", pin);
+            
+            String name = (String)hashStore.get("Buyer Name :");
+            int contact = (Integer)hashStore.get("Contact No :");
+            int pinned = (Integer)hashStore.get("Pin :");
+            
+            System.out.println(name);
+            System.out.println(contact);
+            System.out.println(pinned);
+        
+    }//GEN-LAST:event_saveBtnActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         infoUI info = new infoUI();
@@ -553,7 +593,7 @@ public class PetShopGrid extends javax.swing.JFrame {
     }//GEN-LAST:event_receiptInputMethodTextChanged
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        setLocation(1000, 250);
+        setLocation(700, 250);
     }//GEN-LAST:event_formWindowOpened
 
     //This is the calculate total button
@@ -583,6 +623,12 @@ public class PetShopGrid extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_deleteRowActionPerformed
+
+    private void delBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delBtnActionPerformed
+        pName.setText("");
+        pContact.setText("");
+        pPin.setText("");
+    }//GEN-LAST:event_delBtnActionPerformed
       public static void AddRowToHamsters(Object[] dataRow){
         DefaultTableModel model = (DefaultTableModel)receipt.getModel();
         model.addRow(dataRow);
@@ -633,6 +679,8 @@ public class PetShopGrid extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
+    private javax.swing.JToggleButton confirmBtn;
+    private javax.swing.JToggleButton delBtn;
     private javax.swing.JButton deleteRow;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -642,6 +690,7 @@ public class PetShopGrid extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -656,6 +705,7 @@ public class PetShopGrid extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -666,14 +716,14 @@ public class PetShopGrid extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JTextField pContact;
+    private javax.swing.JTextField pName;
+    private javax.swing.JTextField pPin;
     private static javax.swing.JTable receipt;
+    private javax.swing.JTextArea receiptArea;
+    private javax.swing.JToggleButton saveBtn;
     private javax.swing.JTextField totalPriceField;
     // End of variables declaration//GEN-END:variables
 }
