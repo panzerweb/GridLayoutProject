@@ -1,6 +1,9 @@
 
+import java.awt.print.PrinterException;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -81,7 +84,7 @@ public class PetShopGrid extends javax.swing.JFrame {
         jPanel15 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         receiptArea = new javax.swing.JTextArea();
-        jButton9 = new javax.swing.JButton();
+        printNow = new javax.swing.JButton();
         background = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
@@ -201,7 +204,7 @@ public class PetShopGrid extends javax.swing.JFrame {
         });
         jPanel2.add(jButton6);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, 124));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 210, 124));
 
         jPanel4.setBackground(new java.awt.Color(51, 255, 102));
         jPanel4.setLayout(new java.awt.GridLayout(1, 0));
@@ -319,7 +322,7 @@ public class PetShopGrid extends javax.swing.JFrame {
         });
         jPanel9.add(delBtn);
 
-        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 497, 209, 41));
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 507, 209, 40));
 
         jPanel10.setLayout(new java.awt.GridLayout(1, 0));
         getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 526, -1, -1));
@@ -349,8 +352,13 @@ public class PetShopGrid extends javax.swing.JFrame {
 
         getContentPane().add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 100, 260, 320));
 
-        jButton9.setText("Print Receipt");
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 430, 260, 30));
+        printNow.setText("Print Receipt");
+        printNow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                printNowActionPerformed(evt);
+            }
+        });
+        getContentPane().add(printNow, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 430, 260, 30));
 
         background.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -662,6 +670,15 @@ public class PetShopGrid extends javax.swing.JFrame {
         pContact.setText("");
         pPin.setText("");
     }//GEN-LAST:event_delBtnActionPerformed
+
+    private void printNowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printNowActionPerformed
+        //Print the Receipt
+        try {
+            receiptArea.print();
+        } catch (PrinterException ex) {
+            Logger.getLogger(PetShopGrid.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_printNowActionPerformed
       public static void AddRowToHamsters(Object[] dataRow){
         DefaultTableModel model = (DefaultTableModel)receipt.getModel();
         model.addRow(dataRow);
@@ -723,7 +740,6 @@ public class PetShopGrid extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -754,6 +770,7 @@ public class PetShopGrid extends javax.swing.JFrame {
     private javax.swing.JTextField pContact;
     private javax.swing.JTextField pName;
     private javax.swing.JTextField pPin;
+    private javax.swing.JButton printNow;
     private static javax.swing.JTable receipt;
     private javax.swing.JTextArea receiptArea;
     private javax.swing.JToggleButton saveBtn;
